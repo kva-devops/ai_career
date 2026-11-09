@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f8df3f" />
+    <title>Карьерный навигатор · Java</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section id="authScreen" class="auth-screen">
+      <div class="auth-card">
+        <div class="brand"><div class="brand-mark">J</div><div><strong>career<br />navigator</strong><span>для Java</span></div></div>
+        <div class="auth-switch" role="tablist" aria-label="Режим аккаунта"><button id="loginMode" class="auth-tab active" type="button" role="tab" aria-selected="true">Войти</button><button id="registerMode" class="auth-tab" type="button" role="tab" aria-selected="false">Регистрация</button></div>
+        <p class="eyebrow" id="authEyebrow">ЗАКРЫТЫЙ КОНТУР</p><h1 id="authTitle">С возвращением,<br /><i>войдите в навигатор.</i></h1>
+        <p class="auth-copy" id="authCopy">Профиль, диалоги и карьерные планы сохраняются в вашей защищённой сессии.</p>
+        <form id="authForm"><label id="authNameField" class="hidden">Имя<input id="authName" type="text" autocomplete="name" minlength="2" maxlength="80" placeholder="Как к вам обращаться?" /></label><label>Email<input id="authEmail" type="email" autocomplete="username" required placeholder="you@example.com" /></label><label>Пароль<input id="authPassword" type="password" autocomplete="current-password" minlength="8" required placeholder="Ваш пароль" /></label><button id="authSubmit" class="dark-button" type="submit">Войти <span>→</span></button></form>
+        <p class="auth-hint" id="authHint">Нет аккаунта? <button id="toggleAuth" type="button">Зарегистрироваться</button></p><p id="authError" class="auth-error"></p>
+      </div>
+    </section>
+    <div id="appShell" class="app-shell hidden">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">J</div>
+          <div><strong>career<br />navigator</strong><span>для Java</span></div>
+        </div>
+        <div class="sidebar-label">МОЙ ПРОГРЕСС</div>
+        <div class="progress-card"><div class="progress-top"><span>Профиль заполнен</span><b id="profilePercent">0%</b></div><div class="progress"><i id="profileProgress"></i></div><small>Можно пропустить неизвестное</small></div>
+        <nav class="nav" aria-label="Разделы">
+          <button class="nav-item active" data-view="home"><span>⌂</span>Обзор</button>
+          <button class="nav-item" data-view="chat"><span>◌</span>Диалог</button>
+          <button class="nav-item" data-view="tracks"><span>↗</span>Мои треки <em id="trackCount">0</em></button>
+          <button class="nav-item" data-view="memory"><span>◉</span>Память</button>
+          <button class="nav-item admin-nav hidden" id="adminNav" data-view="admin"><span>⚿</span>Администрирование</button>
+        </nav>
+        <div class="sidebar-bottom"><button class="text-button" id="resetData">↺ Сбросить данные</button><div class="user-chip"><div class="avatar" id="userAvatar">J</div><div><b id="userName">Пользователь</b><span>Java-разработчик</span></div><button class="dots">•••</button></div></div>
+      </aside>
+
+      <main class="main">
+        <header class="mobile-header"><div class="brand-mark">J</div><strong>career navigator</strong><button id="mobileMenu">☰</button></header>
+        <section id="home" class="view active-view">
+          <div class="page-heading"><div><p class="eyebrow">ЧЕТВЕРГ, 16 ОКТЯБРЯ 2026</p><h1>Привет, <span id="homeUserName">пользователь</span> <span class="wave">✦</span></h1><p class="subheading">Разберём, куда расти в Java и что сделать уже на этой неделе.</p></div><button class="outline-button" data-view="memory">⚙ Управить памятью</button></div>
+          <div class="hero-grid">
+            <div class="hero-card yellow"><div class="hero-copy"><span class="tag">ВАШ СЛЕДУЮЩИЙ ШАГ</span><h2>Карьера не обязана быть<br /><i>прямой линией.</i></h2><p>Расскажите о себе — я предложу несколько реалистичных маршрутов, сравню их и помогу выбрать свой.</p><button class="dark-button" data-view="chat">Начать разговор <span>→</span></button></div><div class="hero-doodle">↗<br /><small>понимаю<br />вашу цель</small></div></div>
+            <div class="mini-stack"><div class="mini-card cream"><span class="mini-icon">◎</span><div><b>2–3 трека</b><p>Не один «правильный» ответ, а выбор.</p></div></div><div class="mini-card orange"><span class="mini-icon">✓</span><div><b>Проверяемые шаги</b><p>Проекты, инструменты и материалы.</p></div></div></div>
+          </div>
+          <div class="section-row"><div><p class="eyebrow">КАК ЭТО РАБОТАЕТ</p><h2 class="section-title">От вопроса к действию</h2></div><span class="step-count">01 / 03</span></div>
+          <div class="steps"><div class="step"><span>01</span><h3>Понимаем контекст</h3><p>Опыт, навыки, цель и время на развитие — без лишних вопросов.</p></div><div class="step"><span>02</span><h3>Собираем варианты</h3><p>Четыре роли проверяют реалистичность каждого маршрута.</p></div><div class="step"><span>03</span><h3>Выбираем свой</h3><p>Сохраняем версию, первые три действия и вакансии-ориентиры.</p></div></div>
+        </section>
+
+        <section id="chat" class="view"><div class="page-heading compact"><div><p class="eyebrow">ДИАЛОГ С КОНСУЛЬТАНТОМ</p><h1>Соберём ваш контекст</h1><p class="subheading">Можно отвечать коротко, пропускать вопросы или написать «пока не знаю».</p></div><div class="status-pill"><i></i> готов к диалогу</div></div><div class="chat-layout"><div class="chat-panel"><div class="messages" id="messages"></div><div class="quick-replies"><button data-reply="Заполнить профиль">Заполнить профиль</button><button data-reply="Пока не знаю">Пока не знаю</button><button data-reply="Показать пример">Показать пример</button></div><form class="composer" id="chatForm"><input id="chatInput" autocomplete="off" placeholder="Напишите ответ или вопрос…" /><button aria-label="Отправить">↑</button></form></div><aside class="profile-panel"><div class="panel-heading"><b>Ваш профиль</b><span id="profileStatus">черновик</span></div><div class="resume-upload"><input id="resumeInput" type="file" accept="application/pdf,.pdf" hidden /><button id="uploadResume" type="button" class="upload-resume">↥ Загрузить резюме <span>PDF · до 10 МБ</span></button><p id="resumeStatus" class="resume-status">Резюме поможет учесть реальные проекты и технологии.</p></div><form id="profileForm"><label>Текущая роль<input name="role" placeholder="Например, Middle Java developer" /></label><label>Опыт в разработке<select name="experience"><option value="">Пока не знаю</option><option>до 1 года</option><option>1–3 года</option><option>3–6 лет</option><option>6+ лет</option></select></label><label>Ключевые навыки<textarea name="skills" rows="3" placeholder="Java, Spring, SQL…"></textarea></label><label>Цель на горизонте<select name="horizon"><option value="">Пока не знаю</option><option>3 месяца</option><option>6 месяцев</option><option>12 месяцев</option></select></label><label>Время на обучение в неделю<select name="time"><option value="">Пока не знаю</option><option>2–4 часа</option><option>5–7 часов</option><option>8–12 часов</option><option>12+ часов</option></select></label><label>Интерес к управлению<select name="management"><option value="">Пока не знаю</option><option>Только технический путь</option><option>Интересен management</option><option>Хочу сравнить</option></select></label><button type="submit" class="save-profile">Сохранить профиль</button></form></aside></div></section>
+
+        <section id="tracks" class="view"><div class="page-heading compact"><div><p class="eyebrow">КАРЬЕРНЫЕ ТРЕКИ</p><h1>Варианты роста</h1><p class="subheading">Каждый трек — отдельная гипотеза, а не обещание результата.</p></div><button class="dark-button" id="buildTracks">+ Построить треки</button></div><div id="processing" class="processing hidden"><div class="spinner"></div><div><b id="processingTitle">Аналитик изучает контекст…</b><p id="processingDesc">Проверяем цель, ограничения и неизвестные параметры.</p></div><span class="processing-step">1 / 4</span></div><div id="tracksEmpty" class="empty-state"><div class="empty-art">↗</div><h2>Треки появятся здесь</h2><p>Заполните профиль или начните диалог — этого достаточно, чтобы запустить первую версию.</p><button class="outline-button" data-view="chat">Перейти к анкете</button></div><div id="tracksGrid" class="tracks-grid hidden"></div></section>
+
+        <section id="memory" class="view"><div class="page-heading compact"><div><p class="eyebrow">ПАМЯТЬ КОНСУЛЬТАНТА</p><h1>Что я знаю о вас</h1><p class="subheading">Только явно сообщённые сведения. Предположения не сохраняются.</p></div><span class="memory-badge">◉ актуальная версия 01</span></div><div class="memory-layout"><div class="memory-card"><div class="memory-header"><b>Профиль и предпочтения</b><span>обновлено сегодня</span></div><div id="memoryFacts" class="facts"></div><button class="add-fact" id="addFact">+ Добавить факт</button></div><div class="memory-rules"><p class="eyebrow">ПРАВИЛА ПАМЯТИ</p><h2>Вы управляете контекстом</h2><p>Изменение факта создаёт новую версию контекста. Старые планы помечаются как устаревшие и не используются в новых ответах.</p><button class="danger-button" id="forgetAll">Очистить мои данные</button></div></div></section>
+        <section id="admin" class="view"><div class="page-heading compact"><div><p class="eyebrow">ADMIN CONSOLE</p><h1>Пользователи</h1><p class="subheading">Администратор может просматривать и редактировать профили, память, резюме и переписку клиентов.</p></div><span class="memory-badge">⚿ роль admin</span></div><div class="memory-card"><div class="memory-header"><b>Зарегистрированные аккаунты</b><span id="adminCount">загрузка…</span></div><div id="adminUsers" class="admin-users"></div></div></section>
+      </main>
+    </div>
+    <div id="toast" class="toast"></div><div id="modal" class="modal hidden"><div class="modal-card"><button class="modal-close" id="closeModal">×</button><div id="modalContent"></div></div></div>
+    <script src="app.js"></script>
+  </body>
+</html>

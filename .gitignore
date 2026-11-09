@@ -1,0 +1,11 @@
+node_modules/
+.env
+.env.*
+!.env.example
+*.log
+admin.txt
+env.txt
+.local/
+dist/
+coverage/
+*.zip

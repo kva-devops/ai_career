@@ -1,0 +1,21 @@
+services:
+  career-postgres:
+    image: postgres:16-alpine
+    container_name: career-navigator-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: career_navigator
+      POSTGRES_USER: career_app
+      POSTGRES_PASSWORD: career_app_local
+    ports:
+      - "5434:5432"
+    volumes:
+      - career_navigator_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U career_app -d career_navigator"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+volumes:
+  career_navigator_pgdata:
